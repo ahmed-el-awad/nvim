@@ -699,8 +699,10 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
-        --
-
+        elixirls = {
+          -- Windows
+          cmd = { 'C:/Users/Ahmed/Downloads/elixir-ls/language_server.bat' },
+        },
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
