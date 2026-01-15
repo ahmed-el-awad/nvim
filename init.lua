@@ -6,6 +6,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.o.mouse = 'a'
 vim.o.showmode = false
+vim.o.linebreak = true
 
 -- TODO: check if there's any difference using a schedule lambda
 -- Sync clipboard between OS and Neovim.
@@ -70,6 +71,21 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- Open neovim's config
 vim.keymap.set('n', '<leader>c', '<cmd>e ~/AppData/Local/nvim/<CR>')
+
+local function wrap()
+  if vim.o.wrap then
+    print 'change to nowrap'
+    return 'nowrap'
+  else
+    print 'change to wrap'
+    return 'wrap'
+  end
+end
+
+-- Toggle line wrap
+vim.keymap.set('n', '<M-z>', function()
+  vim.cmd('set ' .. wrap())
+end)
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
