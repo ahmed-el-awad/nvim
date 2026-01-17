@@ -205,7 +205,7 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        ts_ls = {},
         elixirls = {
           -- Windows
           cmd = { 'C:/Users/Ahmed/Downloads/elixir-ls/language_server.bat' },
