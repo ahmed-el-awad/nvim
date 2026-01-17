@@ -72,7 +72,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- Open neovim's config
 vim.keymap.set('n', '<leader>c', '<cmd>e ~/AppData/Local/nvim/<CR>')
 
-local function wrap()
+local function alternateWrap()
   if vim.o.wrap then
     print 'change to nowrap'
     return 'nowrap'
@@ -84,7 +84,7 @@ end
 
 -- Toggle line wrap
 vim.keymap.set('n', '<M-z>', function()
-  vim.cmd('set ' .. wrap())
+  vim.cmd('set ' .. alternateWrap())
 end)
 
 vim.api.nvim_create_autocmd('TextYankPost', {
