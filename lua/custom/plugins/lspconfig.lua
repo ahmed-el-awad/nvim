@@ -6,7 +6,10 @@ return {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       -- Mason must be loaded before its dependents so we need to set it up here.
       -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
-      { 'mason-org/mason.nvim', opts = {} },
+      {
+        'mason-org/mason.nvim',
+        opts = {},
+      },
       'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
@@ -15,6 +18,14 @@ return {
 
       -- Allows extra capabilities provided by blink.cmp
       'saghen/blink.cmp',
+      {
+        'pmizio/typescript-tools.nvim',
+        dependencies = {
+          'nvim-lua/plenary.nvim',
+          'neovim/nvim-lspconfig',
+        },
+        opts = {},
+      },
     },
     config = function()
       -- Brief aside: **What is LSP?**
@@ -205,7 +216,7 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        ts_ls = {},
+        -- ts_ls = {},
         elixirls = {
           -- Windows
           cmd = { 'C:/Users/Ahmed/Downloads/elixir-ls/language_server.bat' },
