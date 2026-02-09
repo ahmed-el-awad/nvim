@@ -26,6 +26,11 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = false
 vim.o.scrolloff = 10
 vim.o.confirm = true
+-- NOTE: On Windows, if you download a parser using treesitter and the shell is set to bash,
+-- nvim-treesitter would download an .so file instead of a .dll, leading to a possible crash
+-- changing back to powershell (or maybe even cmd) and downloading the parser is a hacky fix
+vim.o.shell = 'bash.exe'
+
 -- TODO: check if there's any difference using a schedule lambda
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
