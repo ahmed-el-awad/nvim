@@ -8,6 +8,9 @@ vim.o.mouse = 'a'
 vim.o.showmode = false
 vim.o.linebreak = true
 
+vim.o.tabstop = 2
+vim.o.expandtab = true
+vim.o.shiftwidth = 2
 vim.o.breakindent = true
 vim.o.undofile = true
 vim.o.ignorecase = true
