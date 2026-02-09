@@ -8,15 +8,6 @@ vim.o.mouse = 'a'
 vim.o.showmode = false
 vim.o.linebreak = true
 
--- TODO: check if there's any difference using a schedule lambda
--- Sync clipboard between OS and Neovim.
---  Schedule the setting after `UiEnter` because it can increase startup-time.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
--- vim.schedule(function()
-vim.o.clipboard = 'unnamedplus'
--- end)
-
 vim.o.breakindent = true
 vim.o.undofile = true
 vim.o.ignorecase = true
@@ -32,6 +23,14 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = false
 vim.o.scrolloff = 10
 vim.o.confirm = true
+-- TODO: check if there's any difference using a schedule lambda
+-- Sync clipboard between OS and Neovim.
+--  Schedule the setting after `UiEnter` because it can increase startup-time.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+vim.schedule(function()
+  vim.o.clipboard = 'unnamedplus'
+end)
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
