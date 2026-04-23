@@ -552,16 +552,16 @@ return {
         force_visible_in_empty_folder = false, -- when true, hidden files will be shown if the root folder is otherwise empty
         children_inherit_highlights = true, -- whether children of filtered parents should inherit their parent's highlight group
         show_hidden_count = true, -- when true, the number of hidden items in each folder will be shown as the last entry
-        hide_dotfiles = true,
-        hide_gitignored = true,
-        hide_ignored = true, -- hide files that are ignored by other gitignore-like files
+        hide_dotfiles = false,
+        hide_gitignored = false,
+        hide_ignored = false, -- hide files that are ignored by other gitignore-like files
         -- other gitignore-like files, in descending order of precedence.
         ignore_files = {
           '.neotreeignore',
           '.ignore',
           -- ".rgignore"
         },
-        hide_hidden = true, -- only works on Windows for hidden files/directories
+        hide_hidden = false, -- only works on Windows for hidden files/directories
         hide_by_name = {
           '.DS_Store',
           'thumbs.db',
