@@ -104,6 +104,13 @@ vim.keymap.set('n', '<M-z>', function()
   vim.cmd('set ' .. alternateWrap())
 end)
 
+vim.api.nvim_create_user_command('Vst', function()
+  vim.cmd 'vs'
+  vim.cmd 'term'
+  vim.cmd 'vertical resize 50'
+  vim.cmd 'startinsert'
+end, { desc = 'vertical split and open terminal' })
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
