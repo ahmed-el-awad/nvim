@@ -1,8 +1,8 @@
 return {
-  'vpoltora/cursor-light.nvim',
+  'aikhe/fleur.nvim',
   lazy = false,
   priority = 1000,
   -- config = function()
-  --   vim.cmd 'colorscheme cursor-light'
+  --   vim.cmd 'colorscheme fleur'
   -- end,
 }
